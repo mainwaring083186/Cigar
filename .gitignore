@@ -1,3 +1,7 @@
+# built application files
+*.apk
+*.ap_
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
@@ -26,7 +30,8 @@ $RECYCLE.BIN/
 .LSOverride
 
 # Icon must ends with two \r.
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -34,3 +39,27 @@ Icon
 # Files that might appear on external disk
 .Spotlight-V100
 .Trashes
+
+# Eclipse project files
+.classpath
+.project
+
+# Idea project files
+.idea
+*.iml
+
+# Old-style IDEA project files
+*.ipr
+*.iws
+
+# Local IDEA workspace
+.idea/workspace.xml
+
+# Gradle cache
+.gradle
+
+# generated files
+bin/
+gen/
+out/
+build/
