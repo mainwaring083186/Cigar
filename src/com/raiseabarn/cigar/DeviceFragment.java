@@ -22,7 +22,7 @@ public class DeviceFragment extends Fragment {
 	 * The fragment argument representing the section number for this
 	 * fragment.
 	 */
-	private static final String ARG_SECTION_NUMBER = "section_number";
+	/*private static final String ARG_SECTION_NUMBER = "section_number";
 	
 	
 	public static final String TAG = DeviceFragment.class
@@ -35,7 +35,7 @@ public class DeviceFragment extends Fragment {
 		args.putInt(ARG_SECTION_NUMBER, sectionNumber);
 		fragment.setArguments(args);
 		return new DeviceFragment();
-	}
+	}*/
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -106,7 +106,7 @@ public class DeviceFragment extends Fragment {
 	            return new DeviceListTemplate("c");
 			
 		    }
-			 return new DeviceListTemplate("b");
+			 return new DeviceListTemplate("d");
 		}
 
 		
