@@ -48,36 +48,63 @@ public class MainActivity extends ActionBarActivity implements
 	@Override
 	public void onNavigationDrawerItemSelected(int position) {
 		// update the main content by replacing fragments
-
+		FragmentManager f = getSupportFragmentManager();
 		switch (position) {
 		case 0:
-			FragmentManager f = getSupportFragmentManager();
+
 			f.beginTransaction()
-			.replace(R.id.container,
-					DeviceFragment.newInstance(position + 1),
-					DeviceFragment.TAG).commit();
-		break;
-		default:
-			FragmentManager fragmentManager = getSupportFragmentManager();
-			fragmentManager
-					.beginTransaction()
 					.replace(R.id.container,
-							PlaceholderFragment.newInstance(position + 1))
+							SmokeRoomFragment.newInstance(position + 1))
 					.commit();
 			break;
+		case 1:
+
+			f.beginTransaction()
+					.replace(R.id.container,
+							FriendsFragment.newInstance(position + 1))
+					.commit();
+			break;
+		case 2:
+
+			f.beginTransaction()
+					.replace(R.id.container,
+							SearchFragment.newInstance(position + 1))
+					.commit();
+			break;
+		case 3:
+
+			f.beginTransaction()
+					.replace(R.id.container,
+							ProfileFragment.newInstance(position + 1))
+					.commit();
+			break;
+		case 4:
+
+			f.beginTransaction()
+					.replace(R.id.container,
+							NotificationFragment.newInstance(position + 1))
+					.commit();
+			break;
+		
 		}
 	}
 
 	public void onSectionAttached(int number) {
 		switch (number) {
 		case 1:
-			mTitle = getString(R.string.title_section1);
+			mTitle = getString(R.string.smoke_room);
 			break;
 		case 2:
-			mTitle = getString(R.string.title_section2);
+			mTitle = getString(R.string.friends);
 			break;
 		case 3:
-			mTitle = getString(R.string.title_section3);
+			mTitle = getString(R.string.search);
+			break;
+		case 4:
+			mTitle = getString(R.string.profile);
+			break;
+		case 5:
+			mTitle = getString(R.string.notification);
 			break;
 		}
 	}
@@ -117,17 +144,17 @@ public class MainActivity extends ActionBarActivity implements
 
 	/**
 	 * A placeholder fragment containing a simple view.
-	 */
+	 
 	public static class PlaceholderFragment extends Fragment {
 		/**
 		 * The fragment argument representing the section number for this
 		 * fragment.
-		 */
+		 
 		private static final String ARG_SECTION_NUMBER = "section_number";
 
 		/**
 		 * Returns a new instance of this fragment for the given section number.
-		 */
+		 
 		public static PlaceholderFragment newInstance(int sectionNumber) {
 			PlaceholderFragment fragment = new PlaceholderFragment();
 			Bundle args = new Bundle();
@@ -157,6 +184,6 @@ public class MainActivity extends ActionBarActivity implements
 			((MainActivity) activity).onSectionAttached(getArguments().getInt(
 					ARG_SECTION_NUMBER));
 		}
-	}
+	}*/
 
 }
