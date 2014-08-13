@@ -28,8 +28,7 @@ public  class SearchFragment extends Fragment {
 		return fragment;
 	}
 
-	public SearchFragment() {
-	}
+	
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -38,8 +37,7 @@ public  class SearchFragment extends Fragment {
 				false);
 		TextView textView = (TextView) rootView
 				.findViewById(R.id.section_label);
-		textView.setText(Integer.toString(getArguments().getInt(
-				ARG_SECTION_NUMBER)));
+		textView.setText(getResources().getString(R.string.search));
 		return rootView;
 	}
 

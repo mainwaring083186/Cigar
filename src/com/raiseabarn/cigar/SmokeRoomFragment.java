@@ -3,6 +3,7 @@ package com.raiseabarn.cigar;
 import com.astuetz.PagerSlidingTabStrip;
 import com.raiseabarn.cigar.R;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -29,7 +30,7 @@ public class SmokeRoomFragment extends Fragment {
 		Bundle args = new Bundle();
 		args.putInt(ARG_SECTION_NUMBER, sectionNumber);
 		fragment.setArguments(args);
-		return new SmokeRoomFragment();
+		return fragment;
 	}
 
 	@Override
@@ -61,6 +62,12 @@ public class SmokeRoomFragment extends Fragment {
 		tabs.setShouldExpand(true);
 		tabs.setViewPager(pager);
 
+	}
+	@Override
+	public void onAttach(Activity activity) {
+		super.onAttach(activity);
+		((MainActivity) activity).onSectionAttached(getArguments().getInt(
+				ARG_SECTION_NUMBER));
 	}
 
 	public class MyPagerAdapter extends FragmentStatePagerAdapter {

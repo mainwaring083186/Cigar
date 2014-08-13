@@ -8,12 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-
-
-public  class NotificationFragment extends Fragment {
+public class NotificationFragment extends Fragment {
 	/**
-	 * The fragment argument representing the section number for this
-	 * fragment.
+	 * The fragment argument representing the section number for this fragment.
 	 */
 	private static final String ARG_SECTION_NUMBER = "section_number";
 
@@ -28,9 +25,6 @@ public  class NotificationFragment extends Fragment {
 		return fragment;
 	}
 
-	public NotificationFragment() {
-	}
-
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -38,8 +32,7 @@ public  class NotificationFragment extends Fragment {
 				false);
 		TextView textView = (TextView) rootView
 				.findViewById(R.id.section_label);
-		textView.setText(Integer.toString(getArguments().getInt(
-				ARG_SECTION_NUMBER)));
+		textView.setText(getResources().getString(R.string.notification));
 		return rootView;
 	}
 
