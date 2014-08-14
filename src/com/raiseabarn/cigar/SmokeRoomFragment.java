@@ -3,6 +3,7 @@ package com.raiseabarn.cigar;
 import com.astuetz.PagerSlidingTabStrip;
 import com.raiseabarn.cigar.R;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -15,62 +16,59 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+public class SmokeRoomFragment extends Fragment {
 
-public class DeviceFragment extends Fragment {
-	
 	/**
-	 * The fragment argument representing the section number for this
-	 * fragment.
+	 * The fragment argument representing the section number for this fragment.
 	 */
-	/*private static final String ARG_SECTION_NUMBER = "section_number";
-	
-	
-	public static final String TAG = DeviceFragment.class
-			.getSimpleName();
-	
-	
-	public static DeviceFragment newInstance(int sectionNumber) {
-		DeviceFragment fragment = new DeviceFragment();
+	private static final String ARG_SECTION_NUMBER = "section_number";
+
+	//public static final String TAG = DeviceFragment.class.getSimpleName();
+
+	public static SmokeRoomFragment newInstance(int sectionNumber) {
+		SmokeRoomFragment fragment = new SmokeRoomFragment();
 		Bundle args = new Bundle();
 		args.putInt(ARG_SECTION_NUMBER, sectionNumber);
 		fragment.setArguments(args);
-		return new DeviceFragment();
-	}*/
+		return fragment;
+	}
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 	}
-	
-	
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View rootView = inflater.inflate(R.layout.detail, container,
-				false);
-		
+		View rootView = inflater.inflate(R.layout.detail, container, false);
+
 		return rootView;
 	}
-
-
 
 	@Override
 	public void onViewCreated(View view, Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onViewCreated(view, savedInstanceState);
-		
-		 // Initialize the ViewPager and set an adapter
-		 ViewPager pager = (ViewPager) view.findViewById(R.id.pager);
-		 pager.setAdapter(new MyPagerAdapter(getFragmentManager()));
 
-		 // Bind the tabs to the ViewPager
-		 PagerSlidingTabStrip tabs = (PagerSlidingTabStrip) view.findViewById(R.id.tabs);
-		 tabs.setViewPager(pager);
-		
+		// Initialize the ViewPager and set an adapter
+		ViewPager pager = (ViewPager) view.findViewById(R.id.pager);
+		pager.setAdapter(new MyPagerAdapter(getFragmentManager()));
+
+		// Bind the tabs to the ViewPager
+		PagerSlidingTabStrip tabs = (PagerSlidingTabStrip) view
+				.findViewById(R.id.tabs);
+		tabs.setShouldExpand(true);
+		tabs.setViewPager(pager);
+
 	}
-	
+	@Override
+	public void onAttach(Activity activity) {
+		super.onAttach(activity);
+		((MainActivity) activity).onSectionAttached(getArguments().getInt(
+				ARG_SECTION_NUMBER));
+	}
 
 	public class MyPagerAdapter extends FragmentStatePagerAdapter {
 
@@ -78,8 +76,7 @@ public class DeviceFragment extends Fragment {
 			super(fm);
 		}
 
-		private final String[] TITLES = { "Bathroom", "Bedroom", "Kitchen",
-				"Washroom" };
+		private final String[] TITLES = { "Friends", "Global" };
 
 		@Override
 		public CharSequence getPageTitle(int position) {
@@ -95,21 +92,13 @@ public class DeviceFragment extends Fragment {
 		public Fragment getItem(int arg0) {
 
 			switch (arg0) {
-			  
-	        case 0:
-	            return new DeviceListTemplate("a");
-	        
-	        case 1:
-	            return new DeviceListTemplate("b");
-	        
-	        case 2:
-	            return new DeviceListTemplate("c");
-			
-		    }
-			 return new DeviceListTemplate("d");
-		}
 
-		
+			case 0:
+				return new DeviceListTemplate("a");
+
+			}
+			return new DeviceListTemplate("b");
+		}
 
 	}
 	
