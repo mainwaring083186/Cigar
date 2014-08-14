@@ -83,7 +83,7 @@ public class MainActivity extends ActionBarActivity implements
 			f.beginTransaction()
 					.replace(R.id.container,
 							NotificationFragment.newInstance(position + 1))
-					.commit();
+							.commit();
 			break;
 		
 		}
@@ -143,5 +143,4 @@ public class MainActivity extends ActionBarActivity implements
 		return super.onOptionsItemSelected(item);
 	}
 
-	
 }
