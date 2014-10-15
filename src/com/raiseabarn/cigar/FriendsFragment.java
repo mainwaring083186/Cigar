@@ -23,19 +23,21 @@ public class FriendsFragment extends Fragment {
 	 */
 	private static final String ARG_SECTION_NUMBER = "section_number";
 
-	//public static final String TAG = DeviceFragment.class.getSimpleName();
+	// public static final String TAG = DeviceFragment.class.getSimpleName();
 
 	public static FriendsFragment newInstance(int sectionNumber) {
 		FriendsFragment fragment = new FriendsFragment();
 		Bundle args = new Bundle();
 		args.putInt(ARG_SECTION_NUMBER, sectionNumber);
 		fragment.setArguments(args);
+
 		return fragment;
 	}
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
+
 		super.onCreate(savedInstanceState);
 	}
 
@@ -63,13 +65,13 @@ public class FriendsFragment extends Fragment {
 		tabs.setViewPager(pager);
 
 	}
+
 	@Override
 	public void onAttach(Activity activity) {
 		super.onAttach(activity);
 		((MainActivity) activity).onSectionAttached(getArguments().getInt(
 				ARG_SECTION_NUMBER));
 	}
-
 
 	public class MyPagerAdapter extends FragmentStatePagerAdapter {
 
@@ -104,4 +106,3 @@ public class FriendsFragment extends Fragment {
 	}
 
 }
-

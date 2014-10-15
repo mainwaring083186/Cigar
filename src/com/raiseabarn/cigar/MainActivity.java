@@ -142,5 +142,12 @@ public class MainActivity extends ActionBarActivity implements
 		}
 		return super.onOptionsItemSelected(item);
 	}
+	@Override
+	public void onBackPressed() {
+	    super.onBackPressed();
+	    // turn on the Navigation Drawer image; 
+	    // this is called in the LowerLevelFragments
+	    NavigationDrawerFragment.mDrawerToggle.setDrawerIndicatorEnabled(true);
+	}
 
 }

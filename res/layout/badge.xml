@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+     android:background="@color/white">
+
+ <Button
+     android:id="@+id/badges"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_alignParentTop="true"
+     android:layout_centerHorizontal="true"
+     android:layout_marginTop="28dp"
+     android:background="@color/white"
+     android:drawableTop="@drawable/badge"
+     android:text="Title"
+     android:textSize="20sp" />
+
+ <TextView
+     android:id="@+id/textView1"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_below="@+id/badges"
+     android:layout_centerHorizontal="true"
+     android:text="Description of Badge" />
+
+ <TextView
+     android:id="@+id/textView2"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_below="@+id/textView1"
+     android:layout_centerHorizontal="true"
+     android:text="When this badge was unlocked" />
+   <View
+        android:id="@+id/view2"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView2"
+        android:background="@android:color/darker_gray" />
+
+   <TextView
+       android:id="@+id/textView3"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_below="@+id/view2"
+       android:text="What Cigar unlocked" />
+
+</RelativeLayout>
