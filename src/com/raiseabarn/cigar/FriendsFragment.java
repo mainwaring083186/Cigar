@@ -4,26 +4,29 @@ import com.astuetz.PagerSlidingTabStrip;
 import com.raiseabarn.cigar.R;
 
 import android.app.Activity;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-import android.widget.Toast;
 
-public class FriendsFragment extends Fragment {
+
+public class FriendsFragment extends BaseFragment {
 
 	/**
 	 * The fragment argument representing the section number for this fragment.
 	 */
-	private static final String ARG_SECTION_NUMBER = "section_number";
+	// private static final String ARG_SECTION_NUMBER = "section_number";
 
 	// public static final String TAG = DeviceFragment.class.getSimpleName();
+	public FriendsFragment() {
+		super();
+	}
 
 	public static FriendsFragment newInstance(int sectionNumber) {
 		FriendsFragment fragment = new FriendsFragment();
@@ -66,12 +69,12 @@ public class FriendsFragment extends Fragment {
 
 	}
 
-	@Override
-	public void onAttach(Activity activity) {
-		super.onAttach(activity);
-		((MainActivity) activity).onSectionAttached(getArguments().getInt(
-				ARG_SECTION_NUMBER));
-	}
+	
+	 @Override public void onAttach(Activity activity) {
+	  super.onAttach(activity); ((MainActivity)
+	  activity).onSectionAttached(getArguments().getInt( ARG_SECTION_NUMBER));
+	  }
+	 
 
 	public class MyPagerAdapter extends FragmentStatePagerAdapter {
 

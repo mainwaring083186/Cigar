@@ -1,6 +1,7 @@
 package com.raiseabarn.cigar;
 
 import android.app.Activity;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -10,12 +11,17 @@ import android.widget.TextView;
 
 
 
-public  class SearchFragment extends Fragment {
+public  class SearchFragment extends BaseFragment {
 	/**
 	 * The fragment argument representing the section number for this
 	 * fragment.
 	 */
-	private static final String ARG_SECTION_NUMBER = "section_number";
+	//private static final String ARG_SECTION_NUMBER = "section_number";
+	
+	public SearchFragment(){
+        super();
+    }
+ 
 
 	/**
 	 * Returns a new instance of this fragment for the given section number.
@@ -47,4 +53,5 @@ public  class SearchFragment extends Fragment {
 		((MainActivity) activity).onSectionAttached(getArguments().getInt(
 				ARG_SECTION_NUMBER));
 	}
+	
 }

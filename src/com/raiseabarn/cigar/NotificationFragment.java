@@ -1,18 +1,22 @@
 package com.raiseabarn.cigar;
 
+
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class NotificationFragment extends Fragment {
+public class NotificationFragment extends BaseFragment {
 	/**
 	 * The fragment argument representing the section number for this fragment.
 	 */
-	private static final String ARG_SECTION_NUMBER = "section_number";
+	// private static final String ARG_SECTION_NUMBER = "section_number";
+	public NotificationFragment() {
+		super();
+	}
 
 	/**
 	 * Returns a new instance of this fragment for the given section number.
@@ -36,10 +40,11 @@ public class NotificationFragment extends Fragment {
 		return rootView;
 	}
 
-	@Override
-	public void onAttach(Activity activity) {
-		super.onAttach(activity);
-		((MainActivity) activity).onSectionAttached(getArguments().getInt(
-				ARG_SECTION_NUMBER));
-	}
+	
+	  @Override public void onAttach(Activity activity) {
+	 super.onAttach(activity); ((MainActivity)
+	 activity).onSectionAttached(getArguments().getInt( ARG_SECTION_NUMBER));
+	  }
+	 
+
 }

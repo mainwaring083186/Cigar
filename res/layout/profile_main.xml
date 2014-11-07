@@ -7,76 +7,6 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin" >
 
-    <ImageButton
-        android:id="@+id/imageButton1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/abc_ab_bottom_solid_dark_holo" />
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/imageButton1"
-        android:text="Name" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
-        android:layout_toRightOf="@+id/imageButton1"
-        android:text="Username" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_below="@+id/imageButton1"
-        android:text="Description" />
-
-    <View
-        android:id="@+id/view2"
-        android:layout_width="fill_parent"
-        android:layout_height="1dp"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView3"
-        android:background="@android:color/darker_gray" />
-
-    <Button
-        android:id="@+id/checkIns"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/view2"
-        android:layout_marginTop="15dp"
-        android:layout_toLeftOf="@+id/button4"
-        android:background="@color/white"
-        android:drawableTop="@drawable/checkmark"
-        android:text="12"
-        android:textSize="12sp" />
-
-    <View
-        android:id="@+id/view1"
-        android:layout_width="fill_parent"
-        android:layout_height="1dp"
-        android:layout_alignLeft="@+id/view2"
-        android:layout_centerVertical="true"
-        android:background="@android:color/darker_gray" />
-
-    <Button
-        android:id="@+id/badges"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/view1"
-        android:layout_alignRight="@+id/textView4"
-        android:layout_marginBottom="16dp"
-        android:background="@color/white"
-        android:drawableTop="@drawable/badge"
-        android:text="6"
-        android:textSize="12sp" />
-
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
@@ -94,18 +24,6 @@
         android:layout_below="@+id/textView4"
         android:background="@color/white"
         android:text="See More Activity" />
-
-    <Button
-        android:id="@+id/cigars"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/checkIns"
-        android:layout_alignBottom="@+id/checkIns"
-        android:layout_toRightOf="@+id/textView2"
-        android:background="@color/white"
-        android:drawableTop="@drawable/cigar"
-        android:text="14"
-        android:textSize="12sp" />
 
     <Button
         android:id="@+id/photoPreview"
@@ -143,12 +61,111 @@
         android:textSize="12sp" />
 
     <Button
+        android:id="@+id/cigars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/checkIns"
+        android:layout_alignBottom="@+id/checkIns"
+        android:layout_alignLeft="@+id/viewAllPhotos"
+        android:layout_marginLeft="14dp"
+        android:background="@color/white"
+        android:drawableTop="@drawable/cigar"
+        android:text="14"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/badges"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/textView4"
+        android:layout_below="@+id/cigars"
+        android:layout_marginTop="14dp"
+        android:background="@color/white"
+        android:drawableTop="@drawable/badge"
+        android:text="6"
+        android:textSize="12sp" />
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_alignLeft="@+id/view2"
+        android:layout_below="@+id/friends"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/badges"
+        android:layout_alignParentTop="true"
+        android:text="Name" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="19dp"
+        android:text="Description" />
+
+    <Button
+        android:id="@+id/checkIns"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view2"
+        android:layout_marginTop="20dp"
+        android:layout_toLeftOf="@+id/cigars"
+        android:background="@color/white"
+        android:drawableTop="@drawable/checkmark"
+        android:text="12"
+        android:textSize="12sp" />
+
+    <Button
         android:id="@+id/viewAllPhotos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/photoPreview"
+        android:layout_alignTop="@+id/photoPreview"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="44dp"
         android:background="@color/white"
         android:text="View All Photos" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView3"
+        android:layout_marginTop="46dp"
+        android:background="@android:color/darker_gray" />
+
+    <Button
+        android:id="@+id/changeProfilePicture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/view2"
+        android:layout_alignLeft="@+id/imageView1"
+        android:text="Change" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_below="@+id/textView1"
+        android:text="Username" />
+
+    <ImageView
+        android:id="@+id/profilePicture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/changeProfilePicture"
+        android:layout_alignLeft="@+id/changeProfilePicture"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/textView1"
+        android:src="@drawable/abc_ab_bottom_solid_dark_holo" />
 
 </RelativeLayout>

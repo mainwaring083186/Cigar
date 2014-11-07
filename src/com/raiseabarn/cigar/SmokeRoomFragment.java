@@ -4,6 +4,7 @@ import com.astuetz.PagerSlidingTabStrip;
 import com.raiseabarn.cigar.R;
 
 import android.app.Activity;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -16,14 +17,18 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class SmokeRoomFragment extends Fragment {
+public class SmokeRoomFragment extends BaseFragment {
 
 	/**
 	 * The fragment argument representing the section number for this fragment.
 	 */
-	private static final String ARG_SECTION_NUMBER = "section_number";
+	//private static final String ARG_SECTION_NUMBER = "section_number";
 
 	//public static final String TAG = DeviceFragment.class.getSimpleName();
+	public SmokeRoomFragment(){
+        super();
+    }
+ 
 
 	public static SmokeRoomFragment newInstance(int sectionNumber) {
 		SmokeRoomFragment fragment = new SmokeRoomFragment();
@@ -69,6 +74,7 @@ public class SmokeRoomFragment extends Fragment {
 		((MainActivity) activity).onSectionAttached(getArguments().getInt(
 				ARG_SECTION_NUMBER));
 	}
+	
 
 	public class MyPagerAdapter extends FragmentStatePagerAdapter {
 
