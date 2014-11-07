@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <CheckBox
+            android:id="@+id/likesCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="Likes" />
+
+        <CheckBox
+            android:id="@+id/commentsCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/likesCheckBox"
+            android:text="Comments" />
+
+        <CheckBox
+            android:id="@+id/friendRequestsCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/commentsCheckBox"
+            android:text="Friend Requests" />
+
+        <CheckBox
+            android:id="@+id/newBadgesCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/friendRequestsCheckBox"
+            android:text="New Badges" />
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/newBadgesCheckBox"
+            android:background="@android:color/darker_gray" />
+
+        <TextView
+            android:id="@+id/emailNotificationTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/view1"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:text="Email Notification"
+            android:textSize="20sp" />
+
+        <CheckBox
+            android:id="@+id/emailLikesCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/emailNotificationTextView"
+            android:text="Likes" />
+
+        <CheckBox
+            android:id="@+id/emailCommentsCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/emailLikesCheckBox"
+            android:text="Comments" />
+
+        <CheckBox
+            android:id="@+id/emailFriendRequestsCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/emailCommentsCheckBox"
+            android:text="Friends Requests" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/emailFriendRequestsCheckBox"
+            android:background="@android:color/darker_gray" />
+
+        <TextView
+            android:id="@+id/soundNotificationTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/view2"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:text="Privacy"
+            android:textSize="20sp" />
+
+        <RadioGroup
+            android:id="@+id/availableRadioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/soundNotificationTextView"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical" >
+
+            <RadioButton
+                android:id="@+id/soundRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sound" />
+
+            <RadioButton
+                android:id="@+id/vibrateRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vibrate" />
+
+            <RadioButton
+                android:id="@+id/soundAndVibrateRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sound and Vibrate" />
+
+            <RadioButton
+                android:id="@+id/noneRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="None" />
+        </RadioGroup>
+    </RelativeLayout>
+
+</ScrollView>
