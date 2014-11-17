@@ -28,6 +28,7 @@ public class MainActivity extends ActionBarActivity implements
 	public static final int SEARCH_FRAGMENT = 2;
 	public static final int PROFILE_FRAGMENT = 3;
 	public static final int NOTIFICATION_FRAGMENT = 4;
+	public static final int SETTING_FRAGMENT = 5;
 	/**
 	 * Fragment managing the behaviors, interactions and presentation of the
 	 * navigation drawer.
@@ -83,39 +84,20 @@ public class MainActivity extends ActionBarActivity implements
 			targetFragment = NotificationFragment.newInstance(position + 1);
 			break;
 		}
+		case SETTING_FRAGMENT: {
+			targetFragment = Setting.newInstance(position + 1);
+			break;
+		}
 		default:
 			break;
 		}
 
 		// Select the fragment.
 		fragmentManager.beginTransaction()
-				.replace(R.id.container, targetFragment).commit();
+				.replace(R.id.container, targetFragment).addToBackStack(null).commit();
 	}
 
-	/*
-	 * @Override public void onNavigationDrawerItemSelected(int position) { //
-	 * update the main content by replacing fragments FragmentManager f =
-	 * getSupportFragmentManager(); switch (position) { case 0:
-	 * 
-	 * f.beginTransaction() .replace(R.id.container,
-	 * SmokeRoomFragment.newInstance(position + 1)) .commit(); break; case 1:
-	 * 
-	 * f.beginTransaction() .replace(R.id.container,
-	 * FriendsFragment.newInstance(position + 1)).commit(); break; case 2:
-	 * 
-	 * f.beginTransaction() .replace(R.id.container,
-	 * SearchFragment.newInstance(position + 1)).commit(); break; case 3:
-	 * 
-	 * f.beginTransaction() .replace(R.id.container,
-	 * ProfileFragment.newInstance(position + 1)).commit(); break; case 4:
-	 * 
-	 * f.beginTransaction() .replace(R.id.container,
-	 * NotificationFragment.newInstance(position + 1)) .commit(); break;
-	 * 
-	 * }
-	 * 
-	 * }
-	 */
+	
 
 	public void onSectionAttached(int number) {
 		switch (number) {
@@ -167,7 +149,7 @@ public class MainActivity extends ActionBarActivity implements
 		// Handle action bar item clicks here. The action bar will
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
+	/*	int id = item.getItemId();
 		if (id == R.id.action_settings) {
 			FragmentManager f = getSupportFragmentManager();
 			NavigationDrawerFragment.mDrawerToggle
@@ -176,7 +158,7 @@ public class MainActivity extends ActionBarActivity implements
 	f.beginTransaction().replace(R.id.container, new Setting())
 			.addToBackStack(null).commit();
 			return true;
-		}
+		}*/
 		return super.onOptionsItemSelected(item);
 	}
 
@@ -186,6 +168,7 @@ public class MainActivity extends ActionBarActivity implements
 		// turn on the Navigation Drawer image;
 		// this is called in the LowerLevelFragments
 		NavigationDrawerFragment.mDrawerToggle.setDrawerIndicatorEnabled(true);
+		
 	}
 
 	/**

@@ -1,9 +1,9 @@
 package com.raiseabarn.cigar;
 
 import android.app.Activity;
-import android.content.Intent;
+
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+
 import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -12,8 +12,28 @@ import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-public class Setting extends Fragment implements OnClickListener {
-	Button editSearchButton, editAccountButton, editNotificationButton, helpAndSupportButton;
+public class Setting extends BaseFragment implements OnClickListener {
+	Button editSearchButton, editAccountButton, editNotificationButton,
+			helpAndSupportButton;
+
+	/**
+	 * The fragment argument representing the section number for this fragment.
+	 */
+	// private static final String ARG_SECTION_NUMBER = "section_number";
+	public Setting() {
+		super();
+	}
+
+	/**
+	 * Returns a new instance of this fragment for the given section number.
+	 */
+	public static Setting newInstance(int sectionNumber) {
+		Setting fragment = new Setting();
+		Bundle args = new Bundle();
+		args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+		fragment.setArguments(args);
+		return fragment;
+	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -37,6 +57,13 @@ public class Setting extends Fragment implements OnClickListener {
 		helpAndSupportButton.setOnClickListener(this);
 
 		return rootView;
+	}
+
+	@Override
+	public void onAttach(Activity activity) {
+		super.onAttach(activity);
+		((MainActivity) activity).onSectionAttached(getArguments().getInt(
+				ARG_SECTION_NUMBER));
 	}
 
 	@Override
@@ -72,7 +99,8 @@ public class Setting extends Fragment implements OnClickListener {
 		case R.id.editNotificationButton:
 			NavigationDrawerFragment.mDrawerToggle
 					.setDrawerIndicatorEnabled(false);
-			f.beginTransaction().replace(R.id.container, new EditNotification())
+			f.beginTransaction()
+					.replace(R.id.container, new EditNotification())
 					.addToBackStack(null).commit();
 
 			break;

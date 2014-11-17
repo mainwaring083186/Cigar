@@ -1,9 +1,15 @@
 package com.raiseabarn.cigar;
 
+import com.astuetz.PagerSlidingTabStrip;
+import com.raiseabarn.cigar.FriendsFragment.MyPagerAdapter;
+
 import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,21 +43,74 @@ public  class SearchFragment extends BaseFragment {
 	
 
 	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+
+		super.onCreate(savedInstanceState);
+	}
+
+	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View rootView = inflater.inflate(R.layout.fragment_main, container,
-				false);
-		TextView textView = (TextView) rootView
-				.findViewById(R.id.section_label);
-		textView.setText(getResources().getString(R.string.search));
+		View rootView = inflater.inflate(R.layout.detail, container, false);
+
 		return rootView;
 	}
 
 	@Override
-	public void onAttach(Activity activity) {
-		super.onAttach(activity);
-		((MainActivity) activity).onSectionAttached(getArguments().getInt(
-				ARG_SECTION_NUMBER));
+	public void onViewCreated(View view, Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onViewCreated(view, savedInstanceState);
+
+		// Initialize the ViewPager and set an adapter
+		ViewPager pager = (ViewPager) view.findViewById(R.id.pager);
+		pager.setAdapter(new MyPagerAdapter(getFragmentManager()));
+
+		// Bind the tabs to the ViewPager
+		PagerSlidingTabStrip tabs = (PagerSlidingTabStrip) view
+				.findViewById(R.id.tabs);
+		tabs.setShouldExpand(true);
+		tabs.setViewPager(pager);
+
+	}
+
+	
+	 @Override public void onAttach(Activity activity) {
+	  super.onAttach(activity); ((MainActivity)
+	  activity).onSectionAttached(getArguments().getInt( ARG_SECTION_NUMBER));
+	  }
+	 
+
+	public class MyPagerAdapter extends FragmentStatePagerAdapter {
+
+		public MyPagerAdapter(FragmentManager fm) {
+			super(fm);
+		}
+
+		private final String[] TITLES = { "Recent Cigars", "Suggested Cigars", "Trending Cigars" };
+
+		@Override
+		public CharSequence getPageTitle(int position) {
+			return TITLES[position];
+		}
+
+		@Override
+		public int getCount() {
+			return TITLES.length;
+		}
+
+		@Override
+		public Fragment getItem(int arg0) {
+
+			switch (arg0) {
+
+			case 0:
+				return new DeviceListTemplate("a");
+
+			}
+			return new DeviceListTemplate("b");
+		}
+
 	}
 	
 }
